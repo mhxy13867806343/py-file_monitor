@@ -1,5 +1,9 @@
 # 文件监控程序
 
+[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
+[![Last Updated](https://img.shields.io/badge/last%20updated-2025--05--10-brightgreen)](https://github.com/mhxy13867806343/py-file_monitor)
+
 这个程序会监控指定的多个目录，当发现指定文件（默认为 `diff_result.html`）时自动删除。同时，它会定期扫描整个系统中的特定目录，查找并删除这些文件。
 
 ## 功能特点
@@ -94,6 +98,7 @@ nohup ./run_monitor.sh > /dev/null 2>&1 &
 
 - Python 3.6+
 - watchdog 库 (`pip install watchdog`)
+- 支持的操作系统：macOS, Linux, Windows
 
 ## 脚本说明
 
@@ -103,4 +108,48 @@ nohup ./run_monitor.sh > /dev/null 2>&1 &
 
 ## 日志
 
-程序会生成日志文件 `diff_monitor.log`，记录所有操作和错误信息。
+程序会生成日志文件 `diff_monitor.log`，记录所有操作和错误信息。日志文件存储在程序所在目录或用户主目录中。
+
+## 开源许可证
+
+本项目采用 [MIT 许可证](https://opensource.org/licenses/MIT) 开源。
+
+```
+MIT License
+
+Copyright (c) 2025 hooksvue
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 版本历史
+
+- **v1.0.0** (2025-05-10)
+  - 初始版本发布
+  - 支持监控多个文件和目录
+  - 添加交互式菜单
+  - 提供安装脚本和运行脚本
+
+## 作者
+
+- **hooksvue** - [GitHub](https://github.com/mhxy13867806343)
+
+## 贡献
+
+欢迎提交问题和功能请求！如果您想贡献代码，请提交Pull Request。
