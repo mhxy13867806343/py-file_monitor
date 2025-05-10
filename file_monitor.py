@@ -30,6 +30,20 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
+# 获取日志文件路径
+def get_log_file_path():
+    # 尝试使用当前目录
+    try:
+        log_dir = os.path.dirname(os.path.abspath(__file__))
+        test_file = os.path.join(log_dir, 'test_write.tmp')
+        with open(test_file, 'w') as f:
+            f.write('test')
+        os.remove(test_file)
+        return os.path.join(log_dir, 'diff_monitor.log')
+    except (IOError, PermissionError):
+        # 如果当前目录不可写，使用用户主目录
+        return os.path.join(str(Path.home()), 'diff_monitor.log')
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -37,7 +51,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'diff_monitor.log'))
+        logging.FileHandler(get_log_file_path())
     ]
 )
 

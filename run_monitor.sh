@@ -7,6 +7,10 @@
 # 获取脚本所在目录
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# 创建数据目录
+DATA_DIR="$HOME/.filemonitor"
+mkdir -p "$DATA_DIR"
+
 # 检查Python是否安装
 if ! command -v python3 &> /dev/null; then
     echo "错误: 未找到Python3，请先安装Python3"

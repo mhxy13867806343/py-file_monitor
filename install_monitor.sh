@@ -32,9 +32,19 @@ sudo curl -fsSL \
 # 添加执行权限
 sudo chmod +x $INSTALL_DIR/filemonitor
 
+# 创建数据目录
+DATA_DIR="$HOME/.filemonitor"
+mkdir -p "$DATA_DIR"
+
 # 创建启动脚本
 cat > /tmp/filemonitor_launcher << 'EOF'
 #!/bin/bash
+
+# 创建数据目录
+DATA_DIR="$HOME/.filemonitor"
+mkdir -p "$DATA_DIR"
+
+# 运行Python脚本
 python3 /usr/local/bin/filemonitor "$@"
 EOF
 
