@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.diffmonitor</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/hooksvue/Desktop/py-aaa/file_monitor.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/Users/hooksvue/Desktop/py-aaa/diff_monitor_error.log</string>
+    <key>StandardOutPath</key>
+    <string>/Users/hooksvue/Desktop/py-aaa/diff_monitor_output.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/hooksvue/Desktop/py-aaa</string>
+</dict>
+</plist>
